@@ -1,0 +1,601 @@
+/* CSS Document */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	color: inherit;
+}
+
+a:hover{
+	color: inherit;
+	text-decoration: none;
+}
+
+.top-img {
+	height: auto;
+	width: 100%;
+	position: relative;
+}
+
+.top-img-font {
+	position: absolute;
+	top: 65%;
+	left: 7%;
+	color: var(--bg-color);
+
+}
+
+.top-img-font>h1 {
+	font-size: 3.4vw;
+	font-weight: bolder;
+}
+
+.top-img-font>h3 {
+	font-size: 2.5vw;
+	font-weight: bolder;
+}
+
+/*Buttons*/
+.top-Button {
+	cursor: pointer;
+	background: red;
+	text-align: center;
+	border-radius: 3px;
+	padding: 1vw 3vw;
+	border: none;
+	text-decoration: none;
+	box-shadow: 0 8px 16px 0 var(--hover-color);
+	font-weight: bold;
+}
+
+.top-Button:hover {
+	color: white;
+	opacity: 0.8;
+	background-color: var(--hover-color);
+	text-decoration: none;
+	box-shadow: 0 8px 16px 0 var(--bg-color);
+
+}
+
+.padBtn {
+	margin-left: 12%;
+	margin-top: 30px;
+}
+
+.mar-btn2 {
+	display: inline-block;
+	margin-left: 5%;
+
+}
+
+.mar-btn1 {
+	display: inline;
+}
+
+.sec-row-div {
+    background: var(--bg-color);
+	padding-top: 7%;
+	padding-bottom: 5%;
+	width: 100%;
+	text-align: center;
+}
+
+.sec-row-div>h3 {
+	font-size: 1.6vw;
+	color:var(--icon-btn);
+	
+	font-weight: bold;
+}
+
+.sec-row-div>h1 {
+	font-size: 3vw;
+	font-weight: bolder;
+}
+
+.sec-row-div>p {
+	font-size: 1.2vw;
+	font-weight: bold;
+
+}
+
+
+
+.circle-sec-p {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 390px;
+	background:var(--bg-alpha-overlay);
+}
+
+.circle-sec {
+	flex: 1;
+}
+
+.outer-circle {
+	position: relative;
+	width: 15vw;
+	height: 15vw;
+	border-radius: 50%;
+	border: 1vw solid var(--circle-color);
+}
+.outer-circle:hover{
+	background: var(--circle-bg-color);
+	transition: 1s;
+	        
+
+}
+
+
+
+.circle-div {
+	height: auto;
+	padding-top: 20%;
+	width: 100%;
+}
+
+.circle-div>p {
+	text-align: center;
+	color: #FFF;
+	width: 100%;
+}
+
+.inner-circle {
+	height: 12vw;
+	width: 12vw;
+	border-radius: 50%;
+	background-color:var(--circle-bg-color);
+	/*	margin: 0.9vw;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.inner-circle:hover{
+	background: var(--circle-hover-bg-color);
+	transition: 1s;
+    cursor: pointer;
+}
+
+.inner-circle>div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.round-text1 {
+	padding-top: 10%;
+	text-align: center;
+	font-size: 4vw;
+	font-weight: bolder;
+}
+
+.round-text2 {
+	width: 100%;
+	text-align: center;
+	font-size: 1.4vw;
+	/*	margin-left: 23%;*/
+	font-weight: bolder;
+}
+
+.bg-img {
+	position: relative;
+	width: 100%;
+	height: auto;
+
+}
+
+
+.w-font {
+	text-align: center;
+	width: 100%;
+	color: var(--bg-color);
+}
+
+.imgs-4 {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+
+
+.mapG {
+	width: 100%;
+}
+
+.card-img {
+	display: block;
+}
+
+.card-button {
+	background: rgba(0,0,0,0.2);
+	text-align: center;
+	color:var(--icon-btn);
+	font-weight: bolder;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: none;
+	text-decoration: none;
+/*	box-shadow: 0 16px 16px 0 var(--index-overlay);*/
+}
+
+.card-button:hover{
+	opacity: 0.9;
+	background-color:var(--icon-btn);
+	color:var(--index-overlay);
+	cursor: pointer;
+    transition: 1.5s all;
+}
+
+.card-font {
+	height: auto;
+	
+}
+
+
+
+.card-font>h6 {
+	font-weight: bold;
+	font-size: 1.4vw;
+	text-align: center;
+	margin-top: 15px;
+	 		
+}
+
+.card-font>p {
+	font-size: 1.2vw;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.card-parent {
+
+	max-width: 300px;
+	min-width: 22vw;
+	background: var(--card-bg-color);
+	height: auto;
+	color: var(--bg-color);
+	overflow: hidden;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin: auto;
+}
+@media screen and (max-width: 640px){
+.card-parent{
+    display: block;
+    width: 100%;
+	margin: auto;
+  }
+}
+
+.btn-div {
+	display: flex;
+}
+
+.btn-card-1 {
+	flex: 1;
+	margin-right: 2px;
+}
+
+.btn-card-2 {
+	flex: 1;
+	margin-left: 2px;
+}
+
+.time {
+	display: inline;
+	margin-top: 10px;
+	margin-left: 18px;
+	font-weight: 500;
+	font-size: 1.2vw;
+}
+
+/*Model*/
+.int-heading {
+	font-size: 1.2vw;
+	color: var(--icon-btn);
+}
+
+.heading {
+	font-size: 2vw;
+	letter-spacing: 1.2px;
+	font-weight: 700;
+	color: var(--font-color);
+}
+
+.para {
+	color: var(--font-color);
+	font-size: 1.2vw;
+	letter-spacing: 1px;
+}
+
+
+.circle {
+	width: 7.5vw;
+	height: 7.5vw;
+	border-radius: 50%;
+	border: 3px solid var(--circle-bg-color);
+	/*	float: right;*/
+	background-color: var(--index-overlay);
+}
+.circle:hover{
+	background-color: var(--icon-btn);
+	transition: 1.5s all;
+	cursor: pointer;
+	
+}
+.circle:hover .icons{
+	color:var(--index-overlay); 
+	transition: 1.5s all;
+	cursor: pointer;
+	font-size: 2.5vw;
+	font-weight: bolder;
+	
+}
+ 
+.circle-p {
+	width: 50%;
+	float: left;
+}
+
+.text-box {
+	width: 50%;
+	float: left;
+}
+
+.m-box {
+	position: relative;
+	width: 100%;
+}
+
+.text-box-heading {
+	font-size: 1.5vw;
+}
+
+.text-box-para {
+	font-size: 0.8vw;
+/*	font-weight: bold;*/
+	color: var(--font-color);
+}
+
+.icons {
+	margin-top: 30%;
+	color:var(--bg-color);
+	font-size: 2.5vw;
+}
+
+/*Crousal*/
+.testimonial{
+    background: var(--bg-color);
+    text-align: center;
+    padding: 30px 30px 90px;
+    margin: 0 15px 80px;
+    position: relative;
+    margin-top: 18px;
+}
+.testimonial:before,
+.testimonial:after{
+    content: "";
+    border-top: 40px solid var(--bg-color);
+    border-right: 125px solid transparent;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+}
+.testimonial:after{
+    border-right: none;
+    border-left: 125px solid transparent;
+    left: auto;
+    right: 0;
+}
+.testimonial .icon{
+    display: inline-block;
+    font-size: 80px;
+/*    color: #bd986b;*/
+	color:var(--icon-btn);
+    margin-redbottom: 20px;
+    opacity: 0.6;
+}
+.testimonial .description{
+    font-size: 16px;
+    color:var(--circle-bg-color);
+    text-align: justify;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    letter-spacing: -1px;
+}
+.testimonial .testimonial-content{
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+.testimonial .pic{
+    display: inline-block;
+    border: 6px solid var(--bgcolor);
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px var(--icon-btn);
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+}
+.testimonial .pic img{
+    width: 100%;
+    height: auto;
+}
+.testimonial .title{
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--bg-color);
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+}
+.testimonial{
+    display: block;
+    font-size: 14px;
+    color: red;
+}
+.post{
+    display: block;
+    font-size: 14px;
+/*    color: #ffd9b8;*/
+   color: var(--icon-btn);
+}
+.owl-theme .owl-controls{
+    margin-top: 60px;
+}
+.owl-theme .owl-controls .owl-page span{
+    width: 32px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid rgba(255,0,4,1.00);
+    margin: 5px;
+    opacity: 1;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+    background: red;
+    border-color: solid black;
+}
+    .pic img{
+        width: 100px !important;
+        height: 50px;
+    }
+
+
+
+
+
+
+.overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0%;
+	background: rgba(0,0,0,0.49);
+	transition: 2s;
+}
+.overlay:hover{
+	display: block;
+	opacity: 4;
+}
+
+.imgs-4>img:hover ~ .overlay {
+	display: block;
+	
+}
+
+.div-icon {
+	cursor: pointer;
+	color: white;
+	border-radius: 50%;
+	height: 110px;
+	width: 110px;
+	display: inline;
+	font-size: 2vw;
+	background: red;
+}
+
+.parent-icon {
+	width: 100%;
+	height: auto;
+
+}
+
+
+
+.icon-color {
+color:var(--icon-btn);
+padding-right: 8px;
+}
+
+.respo {
+	margin: auto;
+	max-width: 350px;
+ }
+
+.top-coma {
+	color: var(--icon-btn);
+	
+}
+
+.img-4-top-font {
+	color: var(--icon-btn);
+	text-align: center;
+	font-weight: bold;
+	
+}
+
+.img-4-botm-font {
+	text-align: center;
+	font-weight: 700;
+	font-size:2.5vw;
+	font-family: 'Germania One', cursive;
+}
+
+.bg-color {
+	background: var(--bg-color);
+}
+
+.web-bg-img {
+	 z-index: -2;
+    height: 100vh;
+    width: 100vw;
+	position: fixed;
+}
+
+.div-bg-color {
+background:var(--bg-color);
+}
+
+.crousal-heading {
+	font-weight: bolder;
+	text-align: center;
+	color:var(--icon-btn);
+	padding-top: 10px; 
+	font-size: 2vw;
+}
+
+.crousal-heading1 {
+	font-weight: bolder;
+	text-align: center;
+	color: var(--bg-color);
+	font-size: 4.5vw;
+	font-stretch: expanded;
+}
+
+.l-icon {
+	font-size:2vw;
+	line-height: 3em;
+	color: var(--icon-btn);
+}
+
+
+
+.top-search {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 80%;
+	background-color: rgba(184,184,184,0.70);
+	border-radius: 8px;
+	padding: 12px;
+}
+
+.top-heading {
+	top: 210px;
+	font-size: 4vw;
+	font-weight: bold;
+	color: var(--icon-btn);
+}
+
+.btn-search-top {
+	background-color: var(--icon-btn);
+	color: white;
+}

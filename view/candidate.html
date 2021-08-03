@@ -1,0 +1,646 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+<!--	<link rel="stylesheet" href="../libs/fAwe.css">-->
+	<script src="../libs/bs4.js"></script>
+	<link rel="stylesheet" href="../libs/bs4.css">
+	<script src="../libs/jQuery.js"></script>
+	<script src="../libs/pooper.js"></script>
+	<script src="../libs/angular.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+	<!--angularjs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <!--angularjs end-->
+	
+	<script type="text/javascript" src="../data/candidate.js"></script>
+	<script src="../js/candidate-controller.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/manageTheme.js"></script>
+
+	<link rel="stylesheet" href="../css/candidate.css" />
+	<link rel="stylesheet" href="../css/lightBox.css" />
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/about-panel.css" />
+	<link rel="shortcut icon" href="../images/logo-red.png">
+</head>
+
+<body ng-app="candidate" ng-controller="candidateController">
+	
+	
+<!--	hire job box-->
+	<div class="top-light-box" id="hireJob">
+		<script>
+			function hire(){
+				if($('#lbName').val() == "" || $('#lbEmail').val() == "" || $('#lbTitle').val() == ""){
+					$('#toast').html('Fill all fields');
+				}else{
+				   	$('#toast').html('Email Sent to that candidate');
+					setTimeout(function(){
+						$('.top-light-box').css("display","none");
+					},2000);
+				}
+			}
+		</script>
+		<button class="btn btn-danger light-box-close" onClick="closeBox()">&times;</button>
+		<div class="loginbox">
+			<img src="../images/login & sign up/avatar.png" class="avatar" alt="image">
+			<h1>Give Info</h1>
+			<form>
+				<center>
+					<p>Name</p>
+					<input id="lbName" type="text" name="" placeholder="Enter Name" required>
+					<br><br>
+					<p>Email</p>
+					<input id="lbEmail" type="email" name="" placeholder="Enter Email" required>
+					<br><br>
+					<p>Job Title</p>
+					<input id="lbTitle" type="text" name="" placeholder="Company Title" required>
+					<br><br>
+					<input type="submit" name="" value="Hire Now" onClick="hire(this)">
+				</center>
+			</form>
+			<br>
+			<h1 id="toast"></h1>
+		</div>
+	</div>
+<!--	hire job box-->
+
+	
+<!--	post job box-->
+	<div class="top-light-box" id="postJob">
+		<script>
+			function closeBox(){
+				$('.top-light-box').css("display","none");
+			}
+			function apply(){
+				if($('#lbName').val() == "" || $('#lbEmail').val() == "" || $('#lbTitle').val() == ""){
+					$('#toast').html('Fill all fields');
+				}else{
+				   	$('#toast').html('Email Sent');
+					setTimeout(function(){
+						$('.top-light-box').css("display","none");
+					},2000);
+				}
+			}
+		</script>
+		<button class="btn btn-danger light-box-close" onClick="closeBox()">&times;</button>
+		<div class="loginbox">
+			<img src="../images/login & sign up/avatar.png" class="avatar" alt="image">
+			<h1>Give Info</h1>
+			<form>
+				<center>
+					<p>Name</p>
+					<input id="lbName" type="text" name="" placeholder="Enter Name" required>
+					<br><br>
+					<p>Email</p>
+					<input id="lbEmail" type="email" name="" placeholder="Enter Email" required>
+					<br><br>
+					<p>Job Title</p>
+					<input id="lbTitle" type="text" name="" placeholder="Enter Title" required>
+					<br><br>
+					<p>Job Discription</p>
+					<textarea id="jobDisc" type="text" name="" placeholder="Enter Discription" required></textarea>
+					<br><br>
+					<input type="submit" name="" value="Post Now" onClick="apply(this)">
+				</center>
+			</form>
+			<br>
+			<h1 id="toast"></h1>
+		</div>
+	</div>
+<!--	post job box-->
+
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-fixed-top">
+
+		<a class="navbar-brand" href="#">
+			<img src="../images/logo-red.png" class="nav-logo" alt="LOGO"> Job Connect
+		</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item dropdown textFontsize mr-2">
+					<a href="../index.html" class="nav-link">Home</a>
+				</li>
+
+				<li class="nav-item dropdown textFontsize mr-2">
+					<a href="#" class="nav-link active">View Candidates</a>
+				</li>
+				
+				<li class="nav-item dropdown textFontsize mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Interviews</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="interview.html#first">Sample Interviews (Job Seekers)</a>
+						<a class="dropdown-item" href="interview.html#second">Interview Etiquette (Job Seekers)</a>
+						<a class="dropdown-item" href="interview.html#third">Avoid in interviews (Job Seekers)</a>
+						<a class="dropdown-item" href="interview.html#fourth">Sample Interviews (For Employers)</a>
+                        <a class="dropdown-item" href="interview.html#fifth">Tips for Employers</a>
+                    </div>
+                </li>
+
+				<li class="nav-item dropdown textFontsize mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Change Theme</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Red</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Sky Blue</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Orange</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Pink</a>
+                    </div>
+                </li>
+
+				<li class="nav-item dropdown textFontsize mr-2">
+					<a href="contact-us.html" class="nav-link">Contact Us</a>
+				</li>
+
+				<li class="nav-item dropdown textFontsize mr-2">
+					<a href="about-us.html" class="nav-link">About Us</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav ml-auto" id="navRegister">
+                
+			</ul>
+		</div>
+	</nav>
+
+	<div class="top-img">
+		<img src="../images/crousal/slide1.jpg" alt="img" width="100%" height="500px">
+		<h1 class="center-xy heading">Find Candidates Easily</h1>
+		<div class="center-x top-main">
+			<center>
+				<div class="search">
+					<input type="text" class="form-control search-box mr-2" placeholder="Search Candidates By Name,Skills or Location" ng-model="search">
+					<button type="submit" class="btn btn-search">Search</button>
+				</div>
+			</center>
+		</div>
+	</div>
+	
+	<div class="overlap-box">
+		<div class="container-fluid">
+			<div class="row" style="height: 200px;">
+				<div class="col-sm-2 padDel">
+					<a href="#Awais">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="fas fa-user fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Awais</h6>
+								<div class="text-center tag-quantity">Android</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2 padDel">
+					<a href="#Shafqat">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="far fa-user fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Shafqat</h6>
+								<div class="text-center tag-quantity">Java</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2 padDel">
+					<a href="#Zeeshan">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="fas fa-user-alt fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Zeeshan</h6>
+								<div class="text-center tag-quantity">PHP</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2 padDel">
+					<a href="#Farhan">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="fas fa-user-tie fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Farhan</h6>
+								<div class="text-center tag-quantity">Python</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2 padDel">
+					<a href="#Ayan">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="far fa-user-circle fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Ayan</h6>
+								<div class="text-center tag-quantity">ASP.NET</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-2 padDel">
+					<a href="#qasim">
+						<div class="top-tag-p">
+							<div class="center-xy">
+								<center>
+									<div class="fas fa-user-md fa-3x top-icon-colors"></div>
+								</center>
+								<h6 class="text-center">Qasim</h6>
+								<div class="text-center tag-quantity">MVC</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--	<hr class="main-line">-->
+	
+	<button class="btn btn-block top-btn" onClick="openPostJob()">Post a Job</button>
+
+	<div class="container">
+		
+		<div class="row">
+			
+<!--			left bar-->
+			
+			<div class="col-md-4">
+				<br>
+				<center>
+					<div class="left-card">
+						<br>
+						<h5 style="color: var(--icon-btn)">Latest Jobs</h5>
+						<br><br>
+						<div class="left-card-row" ng-click="setCatsData('Computer Programming','React Native')">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">React-Native</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Karachi
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Bank Manager</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Lahore
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Professor</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Kolkata
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Hotel Manager</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Faisalabad
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+					</div>
+					
+					<br><br>
+					<h6  style="color: var(--icon-btn)">Place For Ad</h6>
+					<img src="../images/contact-images/ads.jpg" width="95%" height="auto" alt="D">
+					<br><br>
+					
+					<div class="left-card">
+						<br>
+						<h5  style="color: var(--icon-btn)">Featured Jobs</h5>
+						<br><br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">JavaScript</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Quetta
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Bank Assit. Manager</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Sydney
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Teacher</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Delhi
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0">Catering Manager</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;"><i class="fa fa-clock-o mr-2 text-danger"></i>Full Time</div>
+									<div style="font-size: 14px;">
+										<i class="fa fa-map-marker mr-2 text-success"></i>Lahore
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+					</div>
+					
+					<br><br>
+					
+					<div class="left-card">
+						<br>
+						<h5 style="color: var(--icon-btn)">Top Jobs Cities</h5>
+						<br><br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0"><i class="fa fa-map-marker mr-2 text-success"></i>Quetta</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;">Full Time</div>
+									<div style="font-size: 14px;">
+										JavaScript
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0"><i class="fa fa-map-marker mr-2 text-success"></i>Sydney</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;">Full Time</div>
+									<div style="font-size: 14px;">
+										Bank Assit. Manager
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0"><i class="fa fa-map-marker mr-2 text-success"></i>Delhi</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;">Full Time</div>
+									<div style="font-size: 14px;">
+										Teacher
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+						<br>
+						<hr class="line">
+						<br>
+						<div class="left-card-row">
+							<div class="lc-row-img-p">
+								<img src="../images/products/cards/{{getRandomNo(1,10)}}.jpg" width="100%" height="100%" alt="g">
+							</div>
+							<div class="lc-row-text">
+								<h6 class="m-0"><i class="fa fa-map-marker mr-2 text-success"></i>Lahore</h6>
+								<div class="lc-text">
+									<div style="font-size: 14px;">Full Time</div>
+									<div style="font-size: 14px;">
+										Catering Manager
+									</div>
+								</div>
+								<p class="lc-aplay">View more</p>
+							</div>
+						</div>
+					</div>
+					
+				</center>
+			</div>
+			
+<!--			left bar end-->
+			
+<!--			main-->
+			
+			<div class="col-md-8">
+
+				<div class="cards-p">
+
+					<div class="jCard" ng-repeat="card in cards | filter:search" id="{{card.name}}">
+						<div class="card-heading">
+							<h4 class="card-head center-xy text-white">{{card.name}}</h4>
+							<img src="../images/persons/{{card.name}}.jpg" width="100%" height="100%" alt="img" />
+						</div>
+						<div class="card-detail">
+							<div class="card-row mt-2">
+								<div><span class="fa fa-envelope-square text-success"></span> Email : {{card.email}}</div>
+							</div>
+							<div class="card-row">
+								<div><span class="fa fa-suitcase text-danger"></span> Candidate Location : {{card.location}}</div>
+							</div>
+							<h5 class="card-discrip-head mb-2">
+								<i class="fas fa-file-alt mr-1" style="color: yellow"></i>
+								Skills : <br><br>
+								<div class="cardTags">
+									<span ng-repeat="tag in card.skills">{{tag}}</span>
+								</div>
+							</h5>
+							<button onClick="openHireJob()" class="btn btn-card">
+								Hire
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+<!--			main end-->
+			
+		</div>
+
+	</div>
+	
+	<!--	about panel-->
+	 <div class="about-panel container-fluid">
+            <div class="row">
+                <div class="col-md-3 ab-first-row">
+                    <center><img alt="img" src="../images/logo-red.png" width="200px" height="auto" /></center>
+                    <!--					<br>-->
+                    <!--					<p>We provide you best opertunities to get Jobs in a high talented working comunity.</p>-->
+                    <br><br>
+                    <center>
+                        <hr class="bg-pan">
+                    </center>
+                    <p>Call Us - 0348-2821889</p>
+                    <p>Send Email On ranag4u69@gmail.com</p>
+                    <p>Visit Us SFC Aptech Karachi, Pakistan</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>POPULAR CATEGORIES</h3>
+                    <br>
+                    <div class="tags">
+                        <span>REACT-NATIVE</span>
+                        <span>ANDROID</span>
+                        <span>HTML &amp; CSS</span>
+                        <span>JAVASCRIPT</span>
+                        <span>REACT-JS</span>
+                        <span>JAVA</span>
+                        <span>ASP.NET</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>GET MORE INFO</h3>
+                    <p>Get any info or give us any suggestions by contacting us.We provide you best opertunities to get
+                        Jobs quickly.</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>RECENTS JOBS</h3><br>
+                    <h4>Software House Manager</h4>
+                    <h4>Content Writer</h4>
+                    <h4>Game Developer</h4>
+                    <h4>Frontend Designer</h4>
+                    <h4>Backend Server Designer</h4>
+                    <br>
+                    <br>
+
+                    <p>Get More Jobs...</p>
+                    <div class="icon-bar">
+                        <a href="https://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.google.com" class="google"><i class="fa fa-google"></i></a>
+                        <a href="https://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>CONTACT US</h3>
+                    <br>
+                    <form>
+						<input class="form-control" placeholder="Name" required /><br>
+						<input class="form-control" placeholder="Email" required/><br>
+						<input class="form-control" placeholder="Subject" required/><br>
+						<input class="form-control" placeholder="Content" required/><br>
+						<input type="submit" class="btn ab-btn" value="Submit" onSubmit="alert('form sent')" />
+					</form>
+                </div>
+            </div>
+        </div>
+	<!--	about panel end-->
+
+	<!--	 Footer-->
+	<div class="footer-div">
+        <footer><span class="ml-5 float-left">Date &amp; Time : <span id="date"></span></span> Copyright TechWiz &copy;- All rights Reserved <span class="mr-5 float-right">Page Views : <span id="pgView"></span></span></footer>
+    </div>
+	<!--	footer end-->
+
+</body>
+
+</html>

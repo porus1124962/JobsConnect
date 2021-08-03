@@ -1,0 +1,761 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	
+<!--	offline-->
+	<link rel="stylesheet" href="libs/bs4.css">
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--	offline-->
+	<link rel="stylesheet" href="libs/fAwe.css">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+<!--	offline-->
+	<script src="libs/jQuery.js"></script>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	
+<!--	offlien-->
+	<script src="libs/pooper.js"></script>
+	
+	<script src="js/manageTheme.js"></script>
+	
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	
+<!--	offline-->
+	<script src="libs/bs4.js"></script>
+	
+    <script src="js/index.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+	
+	<!--Crousal-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.	3.3/owl.carousel.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+	
+<!--	offline-->
+	<link rel="stylesheet" href="libs/owl.css">
+ 
+	<!--Crousal-->
+
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/lightBox.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/about-panel.css" />
+	
+	<link rel="shortcut icon" href="images/logo-red.png">
+
+    <title>Job Portal</title>
+</head>
+
+<body>
+	
+	<!--	hire job box-->
+	<div class="top-light-box" style="width: 100%; height: 100%; top: 0; left: 0;" id="startPanel">
+		<script>
+			function applay(){
+				if($('#lbName').val() == ""){
+					$('#toast').html('Fill all fields');
+				}else{
+				   	$('#toast').html('Data Saved');
+					window.localStorage.setItem("name",$('#lbName').val());
+					window.localStorage.setItem("type",$('#userSelect').val());
+					window.localStorage.setItem("auth",'true');
+				}
+			}
+		</script>
+		<div class="loginbox">
+			<img src="images/login & sign up/avatar.png" class="avatar" alt="image">
+			<h1>Welcome</h1>
+			<form>
+				<center>
+					<p>Name</p>
+					<input id="lbName" type="text" name="" placeholder="Enter Name" required>
+					<br><br>
+					<select style="width: 60%" id="userSelect" class="form-control">
+						<option>I'm a Job Seeker</option>
+						<option>I'm a Employer</option>
+					</select>
+					<br><br>
+					<input type="submit" name="" value="Submit" onClick="applay(this)">
+				</center>
+			</form>
+			<br>
+			<h1 id="toast"></h1>
+		</div>
+	</div>
+	<!--	hire job box-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-fixed-top">
+
+        <a class="navbar-brand" href="#">
+            <img src="images/logo-red.png" class="nav-logo" alt="LOGO"> Job Connect
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown textFontsize mr-2">
+                    <a href="index.html" class="nav-link active" >Home</a>
+                </li>
+
+                <li class="nav-item dropdown textFontsize mr-2" id="navJob">
+					
+                </li>
+				
+				<li class="nav-item dropdown textFontsize mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Interviews</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="view/interview.html#first">Sample Interviews (Job Seekers)</a>
+						<a class="dropdown-item" href="view/interview.html#second">Interview Etiquette (Job Seekers)</a>
+						<a class="dropdown-item" href="view/interview.html#third">Avoid in interviews (Job Seekers)</a>
+						<a class="dropdown-item" href="view/interview.html#fourth">Sample Interviews (For Employers)</a>
+                        <a class="dropdown-item" href="view/interview.html#fifth">Tips for Employers</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown textFontsize mr-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Change Theme</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Red</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Sky Blue</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Orange</a>
+                        <a class="dropdown-item" onClick="changeTheme(this)" href="#">Pink</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown textFontsize mr-2">
+                    <a href="view/contact-us.html" class="nav-link">Contact Us</a>
+                </li>
+
+                <li class="nav-item dropdown textFontsize mr-2">
+                    <a href="view/about-us.html" class="nav-link">About Us</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" id="navRegister">
+                
+			</ul>
+        </div>
+    </nav>
+
+	<div class="web-bg-img">
+		<img src="images/index/office.jpg" alt="img" width="100%" height="100%;">
+	</div>
+	
+    <div class="content">
+
+        <div class="top-img">
+            <img src="images/index/office5.jpg" alt="img" width="100%" height="670px">
+			<center>
+				<h2 class="center-x top-heading" id="mainHead"></h2>
+				<div class="center-xy top-search">
+					<input type="text" id="searchInp" class="form-control search-box mr-2" placeholder="Search Job Title,Skill or Company">
+					
+					<button type="submit" class="btn btn-search btn-search-top" onClick="doSearch(this)">Search</button>
+					
+				</div>
+			</center>
+            <div class="top-img-font">
+                <h1> <i class="fa fa-quote-left top-coma"></i> Find And Select The Job</h1>
+                <h3>You can find and get job according to your skills.. <i class="top-coma fa fa-quote-right"></i></h3>
+            </div>
+        </div>
+		
+		
+ 
+		
+        <div class="container-fluid">
+            <!--2nd Row start-->
+            <div class="row">
+                <div class="sec-row-div">
+                    <h3>Space For Telenteds</h3>
+                    <h1>Recent Professions</h1>
+                    <p>I like the geometric visual, bold typo, easy grid and the well balan ced whitespace.
+                        Gallery Photo,<br>
+                        Creative Corporate, CommunityCompany Profile, Agency and other.</p>
+                </div>
+            </div>
+
+            <!--2nd Row end-->
+        </div>
+        <!--3rd Row start-->
+        <div class="container-fluid">
+         <center>  <div class="row div-bg-color">
+                
+                <div class="col-md-3 respo">
+					<div class="img-4-top-font"><h5>Opertunities in</h5></div>
+					<div class="img-4-botm-font">Medical Field</div>
+                    <div class="imgs-4">
+                        <img src="images/index/doctors.jpg" alt="img" width="100%" height="auto">
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 respo">
+					<div class="img-4-top-font"><h5>Get job about</h5></div>
+					<div class="img-4-botm-font">IT-Software</div>
+                    <div class="imgs-4">
+                        <img src="images/index/card-img-it.jpg" alt="img" width="100%" height="auto">
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-md-3 respo">
+				
+					<div class="img-4-top-font"><h5>Opertunities for</h5></div>
+					<div class="img-4-botm-font">Banking</div>    
+					
+					<div class="imgs-4">
+                        <img src="images/index/office3.jpg" alt="img" width="100%" height="auto">
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 respo">
+					
+					<div class="img-4-top-font"><h5>Opertunities for</h5></div>
+					<div class="img-4-botm-font">Teaching Field</div><div class="imgs-4">
+                        <img src="images/index/teacher.jpg" alt="img" width="100%" height="auto">
+                    </div>
+                </div>
+
+
+            </div>
+		</center> 
+        </div>
+        <!--3rd Row end-->
+		<div style="height: 20px;" class="bg-white"></div>
+  <!--4th Row start-->
+        <div class="bg-img">
+            <img src="images/crousal/slide1.jpg" alt="img" height="390px" width="100%">
+            <div class="circle-sec-p">
+
+                <div class="circle-sec">
+                    <center>
+                     
+						<div class="circle-div">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <div class="w-font"><span class="round-text1">45%</span><br>
+                                        <span class="round-text2">CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <p>
+                            
+                                 CSS cascade but also have the rules you<br>
+                                 feel are most crucial always be applied.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="circle-sec">
+                    <center>
+                        <div class="circle-div">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <div class="w-font"><span class="round-text1">90%</span><br>
+                                        <span class="round-text2">Photoshop</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <p>
+                                Graphic designers create visual concepts,<br>
+                                     concepts, computer software.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="circle-sec">
+                    <center>
+                        <div class="circle-div">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <div class="w-font"><span class="round-text1">69%</span><br>
+                                        <span class="round-text2">Android</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <p>
+                                Designing and developing advanced <br>
+                                applications for the Android platform. 
+                            </p>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="circle-sec">
+                    <center>
+                        <div class="circle-div">
+                            <div class="outer-circle">
+                                <div class="inner-circle">
+                                    <div class="w-font"><span class="round-text1">77%</span><br>
+                                        <span class="round-text2">React-nativ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <p>
+                                React Native JavaScript skills allowing <br>
+                                a developer iOS and Android.
+                            </p>
+                        </div>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+
+       <!--4th Row end-->
+         <div class="sec-row-div bg-light">
+			<h3>Companies are Hiring</h3>
+			<h1>Choose Your Job</h1>
+			<p>If you are looking for the latest jobs, you are at the right place!
+				 JobConnect.com <br>
+			  currently has 1491 jobs available around the world. </p>
+		</div>
+
+        <!--5th row Start-->
+        <div class="container-fluid">
+            
+			<div class="row div-bg-color">
+                <div class="col-md-3 ">
+                    <div class="card-parent">
+                        <div class="card-img">
+                            <img src="images/index/middle/cashier.jpg" alt="img" width="100%" height="auto">
+                        </div>
+                        <div class="card-font ">
+                            <h6>Bank Manager</h6>
+                            <div class="time"><i class="fa fa-clock-o icon-color"></i>Full Time </div>
+                            <div class="time"><i class="fa fa-map-marker icon-color"></i>Allied Bank</div>
+                            <p>Manager jobs now available in Karachi.<br>
+                   Project Manager, Associate Project<br>
+                   Manager,Product Analyst</p>
+
+                            <div class="btn-div">
+
+                                <div class="btn-card-1 text-center card-button"><a href="view/jobs.html">View</a></div>
+                                <div class="btn-card-2 text-center card-button"><a href="view/jobs.html">Related Jobs</a></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="card-parent">
+                        <div class="card-img">
+                            <img src="images/index/middle/it-manager.jpg" alt="img" width="100%" height="auto">
+                        </div>
+                        <div class="card-font ">
+                            <h6>IT Department Manager</h6>
+                            <div class="time"><i class="fa fa-clock-o icon-color"></i>Full Time </div>
+                            <div class="time"><i class="fa fa-map-marker icon-color"></i>Dubai </div>
+                            <p>Department Manager jobs now available
+                   				    in Lahore.Office Manager, <br>
+           					  Accounts Assistant </p>
+
+                            <div class="btn-div">
+
+                               
+                                <div class="btn-card-1 text-center card-button"><a href="view/jobs.html">View</a></div>
+                                <div class="btn-card-2 text-center card-button"><a href="view/jobs.html">Related Jobs</a></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="card-parent">
+                        <div class="card-img">
+                            <img src="images/index/middle/relation.jpg" alt="img" width="100%" height="auto">
+                        </div>
+                        <div class="card-font ">
+                            <h6>Hotel Manager</h6>
+                            <div class="time"><i class="fa fa-clock-o icon-color"></i>Full Time </div>
+                            <div class="time"><i class="fa fa-map-marker icon-color"></i>Karachi</div>
+                            <p>Hotel managers are responsible for managing coordinating and hotel services </p>
+
+                            <div class="btn-div">
+
+                                
+                                <div class="btn-card-1 text-center card-button"><a href="view/jobs.html">View</a></div>
+                                <div class="btn-card-2 text-center card-button"><a href="view/jobs.html">Related Jobs</a></div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="card-parent">
+                        <div class="card-img">
+                            <img src="images/index/middle/prof.jpg" alt="img" width="100%" height="auto">
+                        </div>
+                        <div class="card-font ">
+                            <h6>Math Teacher</h6>
+                            <div class="time"><i class="fa fa-clock-o icon-color"></i>Full Time </div>
+                            <div class="time"><i class="fa fa-map-marker icon-color"></i>KU-Univ.</div>
+                            
+                            <p> Math teachers create lesson plans to instruct their students in  subject mathematics.</p>
+
+                            <div class="btn-div">
+
+                                <div class="btn-card-1 text-center card-button"><a href="view/jobs.html">View</a></div>
+                                <div class="btn-card-2 text-center card-button"><a href="view/jobs.html">Related Jobs</a></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <!--5th row End-->
+		
+		
+      
+        <!--6th row Start-->
+
+        <div class="container-fluid">
+            <div class="row div-bg-color">
+                <div class="col-md-5"><br>
+                    <br>
+                    <br>
+
+                    <img src="images/index/girl-tablet.jpg" height="450px" width="100%" alt="image">
+                </div>
+                <div class="col-md-7"><br>
+                    <br>
+                    <br><br>
+
+                    <h5 class="int-heading">Using one's head to move</h5>
+
+                    <h3 class="heading"> The extruding and upsetting processes</h3><br>
+
+
+                    <p class="para">Using one's head to move an airborne football or volleyball. Heading off,
+                        (especially with regard to livestock, sports or military action), circling around to prevent
+                        livestock or opponents from fleeing.
+                    </p>
+                    <!--                new row start -->
+                    <div class="row" style="padding-top: 50px">
+                        <div class="col-md-6">
+
+                            <div class="m-box">
+                                <div class="circle-p">
+                                    <div class="circle">
+                                        <center><i class="fa fa-laptop icons"></i></center>
+                                    </div>
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="text-box-heading">IT Assistant / IT Officer</h3>
+                                    <p class="text-box-para">• Installing and configuring computer hardware, software,
+                                        systems, networks, printers, and scanners</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="m-box">
+                                <div class="circle-p">
+                                    <div class="circle">
+                                        <center><i class="fa fa-database icons"></i></center>
+                                    </div>
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="text-box-heading">Oracle Database Administrator</h3>
+                                    <p class="text-box-para">• Qualification and Certification: BCS/MCS or other
+                                        relevant Degree from well reputed University.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                new row start -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="m-box">
+                                <div class="circle-p">
+                                    <div class="circle">
+                                        <center><i class="fa fa-server icons"></i></center>
+                                    </div>
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="text-box-heading">System Engineer Server</h3>
+                                    <p class="text-box-para"> Ensure 24/7 availability to provide expert level support
+                                        to any issue that may arise in System.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="m-box">
+                                <div class="circle-p">
+                                    <div class="circle">
+                                        <center><i class="fa fa-keyboard-o icons"></i></center>
+                                    </div>
+                                </div>
+                                <div class="text-box">
+                                    <h3 class="text-box-heading">Data Computer Typist Operator</h3>
+                                    <p class="text-box-para">Board of Secondary Education Karachi BSEK is looking for
+                                        Data Entry Operator, Clerk, Typist, Karachi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--6th row end-->
+        <!--7th row start-->
+
+	<h4 class="crousal-heading">Here Some</h4>
+	<h1 class="crousal-heading1"><span class="fa fa-quote-left l-icon"></span>Testimonials<span class="fa fa-quote-right l-icon"></span></h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="testimonial-slider" class="owl-carousel" >
+                    <div class="testimonial">
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                            A web designer creates the look, layout, and features of a website. The job involves  graphic design and computer programming.  
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/3.jpg" alt="img"></div>
+                            <h3 class="title">williamson</h3>
+                            <span class="post">Web Designer</span>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                              Hotel managers are responsible for managing, coordinating and administering hotel services such as catering and facilities. 
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/images.jpg" alt=""></div>
+                            <h3 class="title">Kristina</h3>
+                            <span class="post">Hotel Manager</span>
+                        </div>
+                    </div>
+                    <div class="testimonial"> 
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                            Doctors perform health assessments, run diagnostic tests,create treatment plans and provide health advice to patients. 
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/team-3.jpg" alt=""></div>
+                            <h3 class="title">Rubeena khan</h3>
+                            <span class="post">Doctor</span>
+                        </div>
+                    </div>
+                       
+                       <div class="testimonial">
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                            As an Android developer, you can deploy devices and apps to employees and keep your corporate data secure. 
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/team-4.jpg" alt=""></div>
+                            <h3 class="title">Steve Thomas</h3>
+                            <span class="post">Android Developer</span>
+                        </div>
+                    </div>     
+                       <div class="testimonial">
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                            Prepares asset, liability, and capital account entries by compiling and analyzing account information.
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/team-5.jpg" alt=""></div>
+                            <h3 class="title">Sumaiya Noor</h3>
+                            <span class="post">Accountant</span>
+                        </div>
+                    </div>     
+                       <div class="testimonial">
+                        <span class="icon fa fa-quote-left"></span>
+                        <p class="description">
+                            As a network manager, You'll be responsible for installing and maintaining your company's computer networks, 
+                        </p>
+                        <div class="testimonial-content">
+                            <div class="pic"><img src="images/index/team-6.jpg" alt="img"></div>
+                            <h3 class="title">Alia Butt</h3>
+                            <span class="post">Networking head</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		
+		<div class="sec-row-div bg-light">
+			<h3>Like Google Map</h3>
+			<h1>Find Us On Google Maps</h1>
+			<p>If you are looking for the latest jobs, visit our office to get latest jobs. <br>
+			  we have currently has 1491 jobs available around the world. </p>
+		</div>
+		
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+ <script>
+$(document).ready(function(){
+    $("#testimonial-slider").owlCarousel({
+        items:3,
+        itemsDesktop:[1000,3],
+        itemsDesktopSmall:[979,2],
+        itemsTablet:[768,2],
+        itemsMobile:[650,1],
+        pagination:true,
+        autoPlay:true
+    });
+});
+     </script>
+        <!--7th row end-->
+        <!--Map Row Start-->
+        <div class="mapG padDel div-bg-color">
+
+            <div class="mapouter bg-color-blue " >
+                <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=aptech%20shar&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                        scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                        href="https://www.pureblack.de">pureblack.de</a></div>
+                <style>
+                    .mapouter {
+                        text-align: right;
+                        height: 500px;
+                        width: 100%;
+                    }
+
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 100%;
+                    }
+                </style>
+            </div>
+
+
+        </div>
+        <!--Map Row end-->
+		
+		<div style="height: 25px;" class="bg-white"></div>
+
+        <div class="about-panel container-fluid">
+            <div class="row">
+                <div class="col-md-3 ab-first-row">
+                    <center><img alt="img" src="images/logo-red.png" width="200px" height="auto" /></center>
+                    <!--					<br>-->
+                    <!--					<p>We provide you best opertunities to get Jobs in a high talented working comunity.</p>-->
+                    <br><br>
+                    <center>
+                        <hr class="bg-pan">
+                    </center>
+                    <p>Call Us - 0348-2821889</p>
+                    <p>Send Email On ranag4u69@gmail.com</p>
+                    <p>Visit Us SFC Aptech Karachi, Pakistan</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>POPULAR CATEGORIES</h3>
+                    <br>
+                    <div class="tags">
+                        <span>REACT-NATIVE</span>
+                        <span>ANDROID</span>
+                        <span>HTML &amp; CSS</span>
+                        <span>JAVASCRIPT</span>
+                        <span>REACT-JS</span>
+                        <span>JAVA</span>
+                        <span>ASP.NET</span>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>GET MORE INFO</h3>
+                    <p>Get any info or give us any suggestions by contacting us.We provide you best opertunities to get
+                        Jobs quickly.</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>RECENTS JOBS</h3><br>
+                    <h4>Software House Manager</h4>
+                    <h4>Content Writer</h4>
+                    <h4>Game Developer</h4>
+                    <h4>Frontend Designer</h4>
+                    <h4>Backend Server Designer</h4>
+                    <br>
+                    <br>
+
+                    <p>Get More Jobs...</p>
+                    <div class="icon-bar">
+                        <a href="https://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.google.com" class="google"><i class="fa fa-google"></i></a>
+                        <a href="https://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>CONTACT US</h3>
+                    <br>
+                    <form>
+						<input class="form-control" placeholder="Name" required /><br>
+						<input class="form-control" placeholder="Email" required/><br>
+						<input class="form-control" placeholder="Subject" required/><br>
+						<input class="form-control" placeholder="Content" required/><br>
+						<input type="submit" class="btn ab-btn" value="Submit" onSubmit="alert('form sent')" />
+					</form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--	 Footer-->
+
+    <div class="footer-div">
+        <footer><span class="ml-5 float-left">Date &amp; Time : <span id="date"></span></span> Copyright TechWiz &copy;- All rights Reserved <span class="mr-5 float-right">Page Views : <span id="pgView"></span></span></footer>
+    </div>
+
+
+</body>
+
+	<script src="js/common.js"></script>
+	
+<!--
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script  src="js/index.js"></script>
+-->
+
+</html>

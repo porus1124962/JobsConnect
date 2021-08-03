@@ -1,0 +1,123 @@
+* {
+	box-sizing:border-box;
+	}
+	
+.bgImage{
+	width:100%;
+	height:35vw;
+    background-image:url("../images/contact-images/1.jpg");
+	background-size:100%,100%;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	}
+	
+.about-top{
+	height:200px;
+	border-radius:15px;
+	margin:auto;
+	margin-top:-50px;
+	z-index:99;
+	position:relative;
+	background: var(--nav-color);
+	}
+	
+.heading{
+	padding-top:40px;
+	font-size:5vw;
+	letter-spacing:0.28px;
+	color:red;
+	text-align:center;
+	}
+.main-parag{
+	color: var(--bg-color) !important;
+	text-align:center;
+	font-size:2vw;
+	opacity:0.5;
+	}
+.form-Div{
+	height:700px;
+	border-top:10px solid  var(--icon-btn);
+	border-bottom:10px solid var(--icon-btn);
+    background-color: whitesmoke;
+	}
+.form-heading{
+	font-size:2vw;
+	margin: 8% -12% 2% 0;
+	}
+.input-Div input{
+    width: 60%;
+}
+
+.input-Div input[type="text"],input[type="email"]
+{   
+    height:5vw;
+    width: 83% !important;
+    /*border: 1px groove;*/
+    background: transparent;
+    outline: none;
+    color: #000;
+    font-size: 16px;
+}
+.input-Div input[type="massage"]
+{    
+     /*height:150px;*/
+     /*border:1px solid;*/
+     width: 83% !important;
+	 background:transparent;
+	 color:var(--font-color);
+	max-height: 300px;
+	}
+
+.input-Div input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 50px;
+    background: var(--icon-btn);
+    color: var(--bg-color);
+    font-size: 2vw;
+	font-weight: 700;
+	border-radius:5px;
+    margin-left: -110px;
+}
+.input-Div input[type="submit"]:hover
+{
+    cursor: pointer;
+	transition: 1.5s all;
+    background: var(--font-color);
+    color: var(--icon-btn);
+}
+.inner-Uper-Div{
+	opacity:0.5;
+	background:transparent;	
+}
+.textArea{
+	width:83%;
+	height:12vw;
+	}
+.right-Heading{
+	font-size:2vw;
+	margin:10%;
+	}
+.right-parag{
+	font-size:1.2vw;
+	margin:3% 10%;
+	}
+.font-Icon{
+	font-size:3vw;
+	color:red;
+}
+.sub-Div {
+    height:700px;
+    border-top:10px solid var(--icon-btn);
+    border-bottom: 10px solid var(--icon-btn);
+    background-color: whitesmoke;
+}
+.input-Upr-Div {
+    padding-left: 100px;
+}
+
+.fa-icons { 
+       font-size: 2vw;
+	    color: var(--icon-btn);
+}
